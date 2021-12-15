@@ -10,9 +10,13 @@ body {
 }
 
 /*HEADER*/
+header {
+    width: 1021px; /* mesma larg da nav */
+    margin: auto;
+}
 header img {
     position: relative;
-    left: 10%;
+    left: auto;
 }
 
 /*NAV*/
@@ -28,9 +32,8 @@ nav li {
 nav ul {
     background-color: var(--bg-nav) ;
     position: relative; /* relativo a nav*/
-    left: 10%;
-    right: 10%;
-    width: 80%;
+    margin: auto;
+    width: 1021px;
     height: 44px;
     line-height: 44px; /* centralizar texto */
 }
@@ -40,6 +43,12 @@ nav ul {
 @media (max-width: 1025px) {
     header img {
         width: 211.55px;
+    }
+    header {
+        width: 756px; /* mesmo width da nav */
+    }
+    nav ul {
+        width: 756px;
     }
 }
 @media (max-width: 750px) {
