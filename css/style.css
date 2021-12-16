@@ -1,19 +1,31 @@
 :root {
     --bg-nav: #222222;
+    --font-color: #222222;
+    --font-nav-cor: #fff;
+    --border: #ddd;
+    
+    --body-width: 1021px;
+    --font-size-info: 11px;
+    --font-size-text: 14px;
+    --font-size-title: 19px;
+    --font-size-h1: 32px;
+
+    --font-family: Verdana, Geneva, sans-serif;
+    --font-family-text: "Open Sans", arial, sans-serif;
 }
 
 body {
     margin: 0px;
+    width: var(--body-width);
+    margin: auto;
+    font-family: var(--font-family);
+    color: var(--font-color);
 }
 * {
     box-sizing: border-box;
 }
 
 /*HEADER*/
-header {
-    width: 1021px; /* mesma larg da nav */
-    margin: auto;
-}
 header img {
     position: relative;
     left: auto;
@@ -22,7 +34,7 @@ header img {
 /*NAV*/
 nav a {
     text-decoration: none;
-    color: white;
+    color: var(--font-nav-cor);
 }
 nav li {
     list-style-type: none;
@@ -31,57 +43,69 @@ nav li {
 }
 nav ul {
     background-color: var(--bg-nav) ;
-    position: relative; /* relativo a nav*/
-    margin: auto;
-    width: 1021px;
-    height: 44px;
     line-height: 44px; /* centralizar texto */
 }
 
-/* VÍDEO 
 .video {
-    position: relative;
-    height: 0px;
-    padding: 0px 0px 56.25%;
-}
-section iframe {
-    position: absolute; 
-
-}*/
-.video {
-    width: 1021px;
-    height: calc(1021px * 0.5625); /* 56.25% */
-    background-color: #ccc;
-    margin: auto;
+    width: 100%;
+    height: calc(var(--body-width) * 0.5625); /* body-width tbm vai ser a larg do vídeo(100%) 56.25% */
 }
 iframe {
     width: 100%;
     height: 100%;
-    display: block;
-    margin: auto;
 }
 
+/*ARTICLE*/
+article {
+    display: flex;
+    flex-wrap: wrap; /* respeitar porcentagem */
+    border: 1px solid var(--border);
+}
+article div {
+    width: 50%;
+    padding: 20px;
+}
+article p {
+    padding: 0px 20px; 
+}
+article p, article div {
+    text-align: justify;
+    font-size: var(--font-size-text);
+}
+.title {
+    font-family: var(--font-family-text);
+    font-weight: bold;
+}
+.title p {
+    font-size: var(--font-size-title);
+    padding-left: 0;
+}
+.title h1 {
+    font-size: var(--font-size-h1);
+    padding-left: 20px;
+}
+
+
 @media (max-width: 1025px) {
+    :root {
+        --body-width: 756px;
+    }
     header img {
         width: 211.55px;
     }
-    header {
-        width: 756px; /* mesmo width da nav */
-    }
-    nav ul {
-        width: 756px;
-    }
 }
 @media (max-width: 750px) {
+    :root {
+        --body-width: 100%;
+    }
     nav {
         display: none;
     }
     header {
-        width: 100%;
         background-color: var(--bg-nav);
     }
     header img {
-        left: 0; /* parar de empurrar 10% pra direita*/
+        width: 118.17px;
         display: block;
         margin: auto;
     }
