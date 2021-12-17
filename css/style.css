@@ -1,6 +1,6 @@
 :root {
-    --bg-nav: #222222;
-    --font-color: #222222;
+    --cor-principal: #222222;
+    --cor-secundaria: #ffffff;
     --font-nav-cor: #fff;
     --border: #ddd;
     
@@ -10,16 +10,16 @@
     --font-size-title: 19px;
     --font-size-h1: 32px;
 
-    --font-family: Verdana, Geneva, sans-serif;
-    --font-family-text: "Open Sans", arial, sans-serif;
+    --font-family-text: Verdana, Geneva, sans-serif;
+    --font-family-title: "Open Sans", arial, sans-serif;
 }
 
 body {
     margin: 0px;
     width: var(--body-width);
     margin: auto;
-    font-family: var(--font-family);
-    color: var(--font-color);
+    font-family: var(--font-family-text);
+    color: var(--cor-principal);
 }
 * {
     box-sizing: border-box;
@@ -35,6 +35,9 @@ header img {
 nav a {
     text-decoration: none;
     color: var(--font-nav-cor);
+    font-size: var(--font-size-text);
+    font-family: var(--font-family-title);
+    font-weight: bold;
 }
 nav li {
     list-style-type: none;
@@ -42,10 +45,15 @@ nav li {
     margin-right: 20px;
 }
 nav ul {
-    background-color: var(--bg-nav) ;
+    background-color: var(--cor-principal) ;
     line-height: 44px; /* centralizar texto */
 }
+nav li:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-principal);
+}
 
+/* VÍDEO */
 .video {
     width: 100%;
     height: calc(var(--body-width) * 0.5625); /* body-width tbm vai ser a larg do vídeo(100%) 56.25% */
@@ -73,7 +81,7 @@ article p, article div {
     font-size: var(--font-size-text);
 }
 .title {
-    font-family: var(--font-family-text);
+    font-family: var(--font-family-title);
     font-weight: bold;
 }
 .title p {
@@ -84,6 +92,54 @@ article p, article div {
     font-size: var(--font-size-h1);
     padding-left: 20px;
 }
+
+/*FOOTER*/
+.pai-flex {
+    display: flex;
+    flex-wrap: wrap; /* respeitar porcentagem */
+}
+.img {
+    width: 30%;
+    float: right;
+}
+
+.texto {
+    width: 70%;
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap; /* respeitar porcentagem */
+    background-color: var(--cor-principal);
+}
+footer div {
+    width: 33%;
+    display: inline-block;
+    font-size: 13px;
+}
+
+.link-post {
+    display: block;
+}
+.num-post {
+    float: right;
+}
+.nome {
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    padding: 5px;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+small {
+    display: block;
+}
+
 
 
 @media (max-width: 1025px) {
