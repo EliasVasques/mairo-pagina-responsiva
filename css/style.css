@@ -94,16 +94,15 @@ article p, article div {
 }
 
 
-/*FOOTER*/
+/*ASIDE*/
 .container {
     display: flex;
     flex-wrap: wrap; /* respeitar porcentagem */
 }
 .container .bloco {
     width: 33%;
-  
 }
-footer {
+aside {
     background-color: var(--cor-principal);
     padding: 50px 10px;
 }
@@ -113,8 +112,7 @@ footer {
 .num-post {
     float: right;
 }
-
-.texto-footer {
+.texto-indicacoes {
     font-size: 13px;
     text-decoration: none;
     color: var(--cor-secundaria);
@@ -126,10 +124,46 @@ footer {
 }
 .link-materia {
     display: block;
+    margin-top: 10px;
+    text-decoration: none;
+}
+.final {
+    width: 100%;
+    background-color: var(--cor-secundaria);
+    margin: 0;
+}
+.indicacao-sessoes {
+    padding: 0;
+}
+.titulo-sessao {
+    color: var(--cor-principal);
+    background-color: var(--cor-secundaria);
+
+    border-radius: 5px;
+    padding: 2px 15px;
+
+    font-size: 11px;
+    font-family: var(--font-family-title);
+    font-weight: bold;
 }
 
-
-
+/* FOOTER */
+footer {
+    font-family: var(--font-family-title);
+    font-size: 11px;
+    margin: 10px;
+}
+footer div {
+    display: inline-block;
+    width: 50%;
+}
+.termos {
+    text-align: right;
+}
+.termos p {
+    display: inline-block;
+    margin-left: 10px;
+}
 
 
 @media (max-width: 1025px) {
@@ -140,8 +174,8 @@ footer {
         width: 211.55px;
     }
 
-    /* FOOTER */
-    footer .logo {
+    /* ASIDE */
+    aside .logo {
         width: 218px;
         height: 71.94;
     }
@@ -149,7 +183,7 @@ footer {
         width: 100px;
     }
 }
-@media (max-width: 750px) {
+@media (max-width: 770px) {
     :root {
         --body-width: 100%;
     }
@@ -165,15 +199,24 @@ footer {
         margin: auto;
     }
 
-    /* FOOTER */
+    /* ASIDE */
     .container .bloco {
         width: 100%;
     }
-    footer .logo {
+    aside .logo {
         display: block;
         margin: auto;
     }
     .nome-materia {
         width: calc(100% - 110px); /* retirar tamanho imagem*/
+    }
+
+    /* FOOTER*/
+    footer div {
+        display: block;
+        width: 100%;
+    }
+    .termos, .info {
+        text-align: center;
     }
 }
