@@ -1,7 +1,6 @@
 :root {
     --cor-principal: #222222;
     --cor-secundaria: #ffffff;
-    --font-nav-cor: #fff;
     --border: #ddd;
     
     --body-width: 1021px;
@@ -24,6 +23,10 @@ body {
 * {
     box-sizing: border-box;
 }
+a {
+    text-decoration: none;
+    color: var(--cor-principal);
+}
 
 /*HEADER*/
 header img {
@@ -33,8 +36,7 @@ header img {
 
 /*NAV*/
 nav a {
-    text-decoration: none;
-    color: var(--font-nav-cor);
+    color: var(--cor-secundaria);
     font-size: var(--font-size-text);
     font-family: var(--font-family-title);
     font-weight: bold;
@@ -42,15 +44,18 @@ nav a {
 nav li {
     list-style-type: none;
     display: inline-block;
-    margin-right: 20px;
+    padding: 0 15px;
 }
 nav ul {
     background-color: var(--cor-principal) ;
     line-height: 44px; /* centralizar texto */
 }
 nav li:hover {
-    background-color: var(--cor-secundaria);
+    background-color: var(--cor-secundaria); 
+}
+nav li:hover a {
     color: var(--cor-principal);
+    font-weight: bolder;
 }
 
 /* VÍDEO */
@@ -64,35 +69,39 @@ iframe {
 }
 
 /*ARTICLE*/
+#by {
+    font-family: var(--font-family-title);
+    font-size: var(--font-size-info);
+}
 article {
     display: flex;
     flex-wrap: wrap; /* respeitar porcentagem */
     border: 1px solid var(--border);
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 article div {
     width: 50%;
+}
+article div, article p {
     padding: 20px;
-}
-article p {
-    padding: 0px 20px; 
-}
-article p, article div {
     text-align: justify;
     font-size: var(--font-size-text);
 }
+
 .title {
     font-family: var(--font-family-title);
     font-weight: bold;
+    padding: 20px;
 }
 .title p {
     font-size: var(--font-size-title);
-    padding-left: 0;
+    margin: 0;
+    padding: 0;
 }
 .title h1 {
     font-size: var(--font-size-h1);
-    padding-left: 20px;
 }
-
 
 /*ASIDE*/
 .container {
@@ -114,7 +123,6 @@ aside {
 }
 .texto-indicacoes {
     font-size: 13px;
-    text-decoration: none;
     color: var(--cor-secundaria);
     padding: 5px;
 }
@@ -125,7 +133,6 @@ aside {
 .link-materia {
     display: block;
     margin-top: 10px;
-    text-decoration: none;
 }
 .final {
     width: 100%;
@@ -150,7 +157,7 @@ aside {
 /* FOOTER */
 footer {
     font-family: var(--font-family-title);
-    font-size: 11px;
+    font-size: var(--font-size-info);
     margin: 10px;
 }
 footer div {
@@ -190,6 +197,9 @@ footer div {
     nav {
         display: none;
     }
+    .video {
+        height: 400px;
+    }
     header {
         background-color: var(--cor-principal);
     }
@@ -202,6 +212,7 @@ footer div {
     /* ASIDE */
     .container .bloco {
         width: 100%;
+        margin-top: 40px;
     }
     aside .logo {
         display: block;
@@ -218,5 +229,25 @@ footer div {
     }
     .termos, .info {
         text-align: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .video {
+        height: 250px;
+    }
+}
+@media (max-width: 400px) {
+    .video {
+        height: 200px;
+    }
+}
+@media (max-width: 280px) {
+    aside .logo {
+        width: 124px;
+        height: 40.91px;
+    }
+    article div {
+        width: 100%;
     }
 }
